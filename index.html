@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ayuda Directa</title>
+
+    <meta
+        name="description"
+        content="Conexión directa entre personas afectadas y personas que desean ayudar."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header>
+            <h1>Ayuda Directa</h1>
+            <p class="subtitle">
+                Terremoto — Colombia
+            </p>
+
+            <p class="intro">
+                Casos verificados de personas y familias afectadas
+                que necesitan ayuda directa.
+            </p>
+        </header>
+
+
+        <!-- =========================
+             CASOS
+        ========================== -->
+
+        <section id="casos">
+
+            <article class="caso">
+
+                <div class="caso-header">
+                    <span class="caso-numero">Caso #001</span>
+                    <span class="estado">Necesita ayuda</span>
+                </div>
+
+                <h2>Familia afectada</h2>
+
+                <p class="descripcion">
+                    Descripción breve de la situación de la familia,
+                    las pérdidas sufridas y sus necesidades actuales.
+                </p>
+
+                <div class="estadisticas">
+
+                    <div>
+                        <span>Necesidad estimada</span>
+                        <strong>$3.000.000</strong>
+                    </div>
+
+                    <div>
+                        <span>Recibido</span>
+                        <strong>$0</strong>
+                    </div>
+
+                    <div>
+                        <span>Pendiente</span>
+                        <strong>$3.000.000</strong>
+                    </div>
+
+                </div>
+
+                <button
+                    class="donar"
+                    onclick="abrirDonacion('001')">
+                    Registrar una donación
+                </button>
+
+            </article>
+
+
+            <article class="caso">
+
+                <div class="caso-header">
+                    <span class="caso-numero">Caso #002</span>
+                    <span class="estado">Necesita ayuda</span>
+                </div>
+
+                <h2>Familia afectada</h2>
+
+                <p class="descripcion">
+                    Descripción breve de la situación de la familia,
+                    las pérdidas sufridas y sus necesidades actuales.
+                </p>
+
+                <div class="estadisticas">
+
+                    <div>
+                        <span>Necesidad estimada</span>
+                        <strong>$2.000.000</strong>
+                    </div>
+
+                    <div>
+                        <span>Recibido</span>
+                        <strong>$0</strong>
+                    </div>
+
+                    <div>
+                        <span>Pendiente</span>
+                        <strong>$2.000.000</strong>
+                    </div>
+
+                </div>
+
+                <button
+                    class="donar"
+                    onclick="abrirDonacion('002')">
+                    Registrar una donación
+                </button>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             DONACIONES
+        ========================== -->
+
+        <section class="donaciones">
+
+            <h2>Donaciones registradas</h2>
+
+            <div id="lista-donaciones">
+
+                <p class="sin-donaciones">
+                    Todavía no hay donaciones registradas.
+                </p>
+
+            </div>
+
+            <div class="total">
+
+                <span>Total registrado</span>
+
+                <strong id="total-donaciones">
+                    $0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            <p>
+                Esta página no solicita ni almacena información personal
+                de los donantes.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- =========================
+         MODAL
+    ========================== -->
+
+    <div
+        id="modal"
+        class="modal oculto">
+
+        <div class="modal-contenido">
+
+            <button
+                class="cerrar"
+                onclick="cerrarModal()">
+                ×
+            </button>
+
+            <h2>Registrar donación</h2>
+
+            <p>
+                Caso <strong id="caso-seleccionado"></strong>
+            </p>
+
+            <label for="monto">
+                ¿Cuánto donaste?
+            </label>
+
+            <input
+                id="monto"
+                type="number"
+                min="1"
+                step="1"
+                placeholder="Ej. 200000"
+            >
+
+            <button
+                class="confirmar"
+                onclick="confirmarDonacion()">
+                Continuar
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
